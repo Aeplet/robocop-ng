@@ -78,6 +78,7 @@ class ModHoneypot(Cog):
             delete_message_days=1,
             reason=ban_reason,
         )
+        await message.guild.unban(message.author, reason="Unban after ban purging messages.")
 
         safe_name = utils.escape_markdown(str(message.author))
         log_message = (
